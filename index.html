@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <title>OMDB</title>
+</head>
+<body class="bg-dark">
+  <header class="header">
+    <div class="header__container container">
+      <div class="header__inner text-center py-5">
+        <a class="text-decoration-none d-inline-block text-danger h1 mb-5" href="./index.html">
+          OMDb API 
+        </a>
+
+        <form class="header__form d-flex align-items-start w-75 mx-auto justify-content-around">
+          <label class="form-label w-50">
+            <input class="search__input form-control-lg w-100" type="text" autocomplete="off" required>
+          </label>
+
+          <label class="form-label w-25">
+            <select class="header__select form-select-lg w-100">
+              <option value="movie">movie</option>
+              <option value="series">series</option>
+              <option value="game">game</option>
+            </select>
+          </label>
+
+          <button class="header__btn btn btn-danger btn-lg" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="main__hero hero">
+      <div class="hero__container container">
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center page-list align-items-center">
+            <li class="page-item"><a class="page-link page__prev" href="#">Previous</a></li>
+            <li class="pt-2">
+              <ul class="page__numbers list-unstyled d-flex align-content-center">
+              </ul>
+            </li>
+            <li class="page-item"><a class="page-link page__next" href="#">Next</a></li>
+          </ul>
+        </nav>
+
+        <div class="hero__inner row">
+          <ul class="hero__list col-9 list-unstyled d-flex align-items-start justify-content-between flex-wrap">
+          </ul>
+
+          <ul class="book__list col-3 list-unstyled">
+          </ul>
+        </div>
+
+       <div class="spinner_box w-25 mx-auto">
+        <div class="spinner-border text-success mx-auto" style="width: 3rem; height: 3rem;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+       </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body w-75 mx-auto">
+          <img src="" class="card-img-top my-4 modal_img rounded" alt="..." height="380">
+        </div>
+        <div class="modal-body">
+          <p class="modal__text h5 text-danger">...</p>
+          <p class="modal__type h5">
+          </p>
+          <p class="modal__imdb h5 text-primary">
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <!-- Template -->
+  <template id="template">
+    <li class="hero__item mb-4">
+      <div class="card" style="width: 18rem;">
+        <img src="" class="card-img-top js-img" alt="..." width="286" height="420">
+        <div class="card-body">
+          <h5 class="card-title js-title">Card title</h5>
+          <p class="js-year h6 text-danger"></p>
+          <p class="card-text js-text h6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <button type="button" class="btn btn-primary js-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+              Info
+            </button>
+            <button class="border-0 bg-white"><i class="bi bi-star book__btn fs-3"></i></button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
