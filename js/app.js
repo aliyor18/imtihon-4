@@ -63,15 +63,15 @@ function objItem(obj) {
 
 list.addEventListener("click", (evt) => {
   if (evt.target.matches(".book__btn")) {
-    let bookImd = evt.target.dataset.imdId;
-    movieData(bookImd);
+    let bookImd = evt.target.dataset.imdId
+    movieData(bookImd)
   }
 })
 
 function clickBook (movie) {
   bookArr.push(movie);
-  localStorage.setItem("movies", JSON.stringify(bookArr));
-  renderBook(bookArr);
+  localStorage.setItem("movies", JSON.stringify(bookArr))
+  renderBook(bookArr)
 }
 
 function renderBook(arr) {
@@ -82,7 +82,7 @@ function renderBook(arr) {
     elItemBook.setAttribute("class","mb-3");
     elItemBook.innerHTML = ` <p class="d-inline-block text-primary h5">${index + 1} ${bookMovie.Title}</p> <button id = "${bookMovie.imdbID}" class="text-green db btn btn-danger ms-2">delete</button>`
 
-    elBookList.appendChild(elItemBook);
+    elBookList.appendChild(elItemBook)
   })
 }
 
@@ -93,9 +93,9 @@ function deletItem(id) {
     if(evt.target.matches(".db")) {
       let id = evt.target.id;
       let findDeletMovie = bookArr.findIndex(movie => movie.imdbID == id);
-      bookArr.splice(findDeletMovie,1);
-      renderBook(bookArr);;
-      localStorage.setItem("movies", JSON.stringify(bookArr));
+      bookArr.splice(findDeletMovie,1)
+      renderBook(bookArr)
+      localStorage.setItem("movies", JSON.stringify(bookArr))
     }
   })
 }
@@ -105,7 +105,7 @@ deletItem()
 
 function renderItem (movies) {
   let box = document.createDocumentFragment();
-  list.innerHTML = ""; 
+  list.innerHTML = ""
   
   modalOppen(movies)
   movies.forEach(movie => {
