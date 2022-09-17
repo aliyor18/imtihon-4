@@ -16,7 +16,7 @@ let bookArr = JSON.parse(localStorage.getItem("movies")) || [];
 
 const moviesData = async (movie) => {
   try {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=b5d53f4c&s=${movie}&page=${page}&type=${type}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=b5d53f4c&s=${movie}&page=${page}&type=${type}`)
 
     const data = await response.json();
     renderItem(data.Search);
@@ -39,7 +39,7 @@ const moviesData = async (movie) => {
 
 const movieData = async (moviId) => {
   try {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=b5d53f4c&i=${moviId}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=b5d53f4c&i=${moviId}`)
 
     const data = await response.json();
     clickBook(data);
